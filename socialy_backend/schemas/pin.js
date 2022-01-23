@@ -47,5 +47,11 @@ export default {
       type: 'array',
       of: [{ type: 'save' }]
     },
+    {
+      name: 'comments',
+      title: 'Comments',
+      type: 'array',
+      of: [{ type: 'comment' }]
+    }
   ],
 }

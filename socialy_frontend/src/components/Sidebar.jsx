@@ -11,7 +11,7 @@ const categories = [
   { name: 'Wallpapers' },
   { name: 'Photography' },
   { name: 'Gaming' },
-  { name: 'Coding' }
+  { name: 'Coding' },
   { name: 'Other' }
 ];
 

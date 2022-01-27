@@ -23,15 +23,15 @@ const Home = () => {
   const [user, setUser] = useState(null);
   const scrollRef = useRef();
 
-  const userInfo = getUserInfo();
+  
 
   useEffect(() => {
+    const userInfo = getUserInfo();
     const query = userQuery(userInfo?.googleId);
     client.fetch(query)
       .then((data) => {
         setUser(data[0]);
       });
-
   }, []);
 
   useEffect(() => {
@@ -50,7 +50,7 @@ const Home = () => {
             <Logo />
           </Link>
           <Link to={`users/${user?._id}`}>
-            <img src={user?.image} alt="logo" className="w-16" />
+            <img src={user?.image} alt="logo" className="w-10 rounded-full" />
           </Link>
         </div>
         {toggleSidebar && (
@@ -69,7 +69,7 @@ const Home = () => {
       </div>
       <div className="pb-2 flex-1 h-screen overflow-y-scroll text-center" ref={scrollRef}>
         <Routes>
-          <Route path="/user/:userId" element={<UserProfile />}/>
+          <Route path="/user/:userId" element={<UserProfile user={user} />}/>
           <Route path="/*" element={<Pins user= {user && user} />}/>
           <Route />
         </Routes>

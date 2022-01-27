@@ -1,9 +1,10 @@
 import React from 'react'
 
-const UserProfile = () => {
+const UserProfile = (props) => {
+  console.log(props);
   return (
     <div>
-      User Profile
+      <p>{props.user.userName}</p>
     </div>
   )
 }

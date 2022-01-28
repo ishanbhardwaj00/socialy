@@ -7,7 +7,7 @@ const Pins = ({user}) => {
   const [searchTerm, setSearchTerm] = useState('');
   console.log(user)
   return (
-    <div className="px-2 md:px-5">
+    <div className="px-2 height md:px-5">
       <div className="bg-white-50">
         <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} user={user}/>
       </div>

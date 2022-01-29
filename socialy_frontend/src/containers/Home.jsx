@@ -6,16 +6,10 @@ import { Sidebar, UserProfile  } from '../components';
 import Pins from './Pins';
 import { client } from '../client';
 import { userQuery } from '../utils/data';
+import { getUserInfo } from '../utils/getUser';
 import Logo from '../components/Logo';
 
-const getUserInfo = () => {
-  const userInfo = localStorage.getItem('user');
-  if(userInfo) 
-    return JSON.parse(userInfo);
 
-  return localStorage.clear();
-  
-}
 
 const Home = () => {
 

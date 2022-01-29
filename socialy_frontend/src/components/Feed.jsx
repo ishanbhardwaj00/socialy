@@ -11,7 +11,7 @@ const Feed = () => {
   const { categoryId } = useParams();
   const [pins, setPins] = useState(null);
 
-  useEffect(() => {
+  useEffect(() => { 
     setLoading(true);
     if(categoryId) {
       const query = searchQuery(categoryId);
@@ -28,10 +28,14 @@ const Feed = () => {
       })
       setLoading(false);
     }
-  }, [categoryId])
+  }, [categoryId]);
+
 
   if(loading)
     return <Spinner message="We are adding ideas to your feed!" />
+  
+  if(!pins?.length)
+    return <h2>No pins available</h2>
 
   return (
     <div>
